@@ -207,6 +207,7 @@ h2.text-center{
 
 #compo-select .exam-area{
   height: 10em;
+  text-align: center;
 }
 
 #compo-select .exam-area:after{
