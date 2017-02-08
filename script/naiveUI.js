@@ -904,8 +904,8 @@ var naiveUI = {
       }
       
       //由于magnifier是fixed定位且z-index很大，因此无法触发img的mouseleave事件
-      if(event.clientX < imgClientLeft - 1 || event.clientX > (imgClientLeft + img.offsetWidth) ||
-        event.clientY < imgClientTop - 1 || event.clientY > (imgClientTop + img.offsetHeight)){
+      if(event.clientX < imgClientLeft - 1 || event.clientX > (imgClientLeft + img.offsetWidth + 1) ||
+        event.clientY < imgClientTop - 1 || event.clientY > (imgClientTop + img.offsetHeight + 1)){
         document.body.removeChild(magnifierNode)
         document.body.removeChild(showNode)
         window.removeEventListener("mousemove",magnify,false)
