@@ -145,7 +145,7 @@ var lastClickLi,lastShow
       lastShow = nodeToShow
       lastClickLi = event.target
 
-      if(dataValue === "compo-slideDoor"){
+      if(dataValue === "compo-slideDoor" && !document.querySelector("#compo-slideDoor .slide-door-img")){
         ;(function makeSildeDoor(){
           var placerHolderNode = document.querySelector(".slideDoor-wrapper"),
             sourse = [["images/Tulips.jpg","tulip","tulip"],
@@ -171,7 +171,7 @@ var lastClickLi,lastShow
         })()
       }
 
-      if(dataValue === "effect-waterfall"){
+      if(dataValue === "effect-waterfall" && !document.querySelector("#effect-waterfall .waterfall-flex")){
          ;(function setWaterfall(){
           var imgSourse = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpeg","images/7.jpg","images/8.jpg","images/9.jpg","images/10.jpg","images/11.jpg","images/12.jpg"]
 
