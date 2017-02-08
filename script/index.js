@@ -175,9 +175,13 @@ var lastClickLi,lastShow
          ;(function setWaterfall(){
           var imgSourse = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpeg","images/7.jpg","images/8.jpg","images/9.jpg","images/10.jpg","images/11.jpg","images/12.jpg"]
 
+          var i = 0
           function createImg(sourse){
             var img = document.createElement("img")
-            img.src = sourse[parseInt(Math.random() * 12)]
+            img.src = sourse[i++]
+            if(i === 12){
+              i = 0
+            }
             return img
           }
 
