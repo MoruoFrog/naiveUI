@@ -1,0 +1,218 @@
+html{
+  height: 100%;
+  background: #eee;
+}
+
+body{
+  width: 80%;
+  min-height: 100%;
+  background: white;
+  margin: auto;
+  padding-bottom: 30px;
+  color: rgb(101,113,128);
+}
+
+.header{
+  position: relative;
+  height: 50px;
+  background: #eee;
+  margin: 0 auto;
+}
+
+.header img{
+  height: 100%;
+}
+
+.main-container{
+  height: 100%;
+  background: white;
+  margin: auto;
+  letter-spacing: -5px;
+}
+
+.nav{
+  display: inline-block;
+  width: 20%;
+  letter-spacing: 0;
+}
+
+.nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding-left: 2em;
+}
+
+.nav ul>li{
+  min-height: 3.5em;
+  line-height: 3.5em;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.pointer:hover,.chosen{
+  color: #6868da;
+}
+
+.content-wrapper{
+  display: none;
+  position: relative;
+  padding-right: 0.8em;
+}
+
+.block{
+  display: block;
+}
+
+.display-wrapper{
+  display: inline-block;
+  width: 80%;
+  letter-spacing: 0;
+  vertical-align: top;
+}
+
+.display-wrapper p{
+  line-height: 2em;
+  margin-bottom: 0;
+}
+
+.display-wrapper h3,h2,h1{
+  font-weight: normal;
+}
+
+.display-wrapper ul{
+  margin: 0;
+}
+
+.display-wrapper li{
+  line-height: 2em;
+  list-style-type: disc;
+}
+
+pre{
+  margin: 0;
+}
+
+pre + h2{
+  margin-top: 0;
+}
+
+h2.text-center{
+  text-align: center;
+}
+
+.exam-area{
+  width: 100%;
+  padding: 1em;
+  border:1px solid #ded4de;
+  border-radius: 0.6em;
+}
+
+.shuffling-wrapper{
+  position: relative;
+  width: 60%;
+  height: 30em;
+  margin: auto;
+}
+
+.slideDoor-wrapper{
+  position: relative;
+  width: 70%;
+  height: 20em;
+  margin:auto;
+}
+.code-wrapper{
+  overflow: hidden;
+}
+
+.API-table{
+  display: block;
+  width: 100%;
+  min-width: 600px;
+  margin-top: 0.5em;
+  clear: both;
+}
+
+.API-table td{
+  width: auto;
+}
+
+.calendar-wrapper{
+  width: 400px;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: o.4em;
+  margin: 0 auto;
+}
+
+#effect-drag .exam-area{
+  position: relative;
+  height: 30em;
+}
+
+.drag-area{
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+}
+
+.node-to-drag{
+  position: absolute;
+  top: calc(50% - 5em);
+  left: calc(50% - 5em);
+  width: 10em;
+  height: 10em;
+  border: 1px solid black;
+}
+
+.drag-part{
+  height: 20%;
+  background: #6584bf;
+  cursor: pointer;
+}
+
+#effect-resize .exam-area{
+  position: relative;
+  min-height: 30em;
+}
+
+.resize-node{
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-5em,-5em);
+  border:1px solid black;
+}
+
+.img-to-magnify{
+  width: 450px;
+  height: 300px;
+}
+
+#effect-waterfall .exam-area{
+  height: 40em;
+}
+
+.waterfall{
+  position: relative;
+  width: 95%;
+  height: 100%;
+  overflow: scroll;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+#compo-select .exam-area{
+  height: 10em;
+}
+
+#compo-select .exam-area:after{
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 100%;
+  vertical-align: middle;
+}
