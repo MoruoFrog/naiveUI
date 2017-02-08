@@ -15,14 +15,12 @@ var lastClickLi,lastShow
 ;(function makeComponent(){
   ;(function makeShuffling(){  
     var shufflingPlacerHolderNode = document.querySelector(".shuffling-wrapper"),
-      shufflingSourse = [
-        ["images/Tulips.jpg","tulip","tulip"],
-        ["images/Desert.jpg","desert","desert"],
-        ["images/Hydrangeas.jpg","hydrangea","hydrangea"],
-        ["images/Jellyfish.jpg","jellyfish","jellyfish"],
-        ["images/Koala.jpg","koala","koala"],
-        ["images/Kobe6.jpg","Kobe","kobe"]
-        ]
+      shufflingSourse = [["http://tupian.enterdesk.com/2014/mxy/02/11/4/4.jpg","mountain","mountain"],
+        ["http://img0.ph.126.net/4UmN4959IkgR--p-roGYEQ==/54324670522774929.jpg","horse","horse"],
+        ["http://pic.58pic.com/58pic/15/15/35/08858PICGTF_1024.jpg","sea","sea"],
+        ["http://tupian.enterdesk.com/2012/1113/gha/2/shatanhb9.jpg","road","road"],
+        ["http://img2.91.com/uploads/allimg/130424/32-1304241G237.jpg","flower","flowe"]
+      ]
 
     naiveUI.createShuffling(shufflingSourse,shufflingPlacerHolderNode,"sgggg")
 
@@ -148,11 +146,11 @@ var lastClickLi,lastShow
       if(dataValue === "compo-slideDoor" && !document.querySelector("#compo-slideDoor .slide-door-img")){
         ;(function makeSildeDoor(){
           var placerHolderNode = document.querySelector(".slideDoor-wrapper"),
-            sourse = [["images/Tulips.jpg","tulip","tulip"],
-              ["images/Desert.jpg","desert","desert"],
-              ["images/Hydrangeas.jpg","hydrangea","hydrangea"],
-              ["images/Jellyfish.jpg","jellyfish","jellyfish"],
-              ["images/Koala.jpg","koala","koala"]
+            sourse = [["http://tupian.enterdesk.com/2014/mxy/02/11/4/4.jpg","mountain","mountain"],
+              ["http://img0.ph.126.net/4UmN4959IkgR--p-roGYEQ==/54324670522774929.jpg","horse","horse"],
+              ["http://pic.58pic.com/58pic/15/15/35/08858PICGTF_1024.jpg","sea","sea"],
+              ["http://tupian.enterdesk.com/2012/1113/gha/2/shatanhb9.jpg","road","road"],
+              ["http://img2.91.com/uploads/allimg/130424/32-1304241G237.jpg","flower","flowe"]
             ],
             ratio = 4/3
 
@@ -173,12 +171,24 @@ var lastClickLi,lastShow
 
       if(dataValue === "effect-waterfall" && !document.querySelector("#effect-waterfall .waterfall-flex")){
          ;(function setWaterfall(){
-          var imgSourse = ["images/1.jpg","images/2.jpg","images/3.jpg","images/4.jpg","images/5.jpg","images/6.jpeg","images/7.jpg","images/8.jpg","images/9.jpg","images/10.jpg","images/11.jpg","images/12.jpg"]
+          var imgSourse = ["http://g.hiphotos.baidu.com/zhidao/pic/item/c75c10385343fbf2c46c7a9bb47eca8064388fc2.jpg",
+            "http://f.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=d35252a18794a4c20a76ef2f3bc437e3/e4dde71190ef76c6a23548859d16fdfaae5167bc.jpg",
+            "http://img2.ph.126.net/hefKdojeIrkC1StWXtQNTQ==/1025976290128129001.jpg",
+            "http://b.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=4efce860ab345982c5dfed9639c41d9b/63d9f2d3572c11df70cdc337652762d0f703c282.jpg",
+            "http://p5.image.hiapk.com/uploads/allimg/141215/7730-1412151GZ6.jpg",
+            "http://5.66825.com/download/pic/000/329/a49fc9ced078f6aef2fc085fb8fe391a.jpg",
+            "http://image3.uuu9.com/war3/dota/UploadFiles_5254/200807/08072715435217311.jpg",
+            "http://v1.qzone.cc/pic/201604/18/20/35/5714d49c31a98083.jpg%21600x600.jpg",
+            "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1205/18/c5/11666275_1337332857422.jpg",
+            "http://imgsrc.baidu.com/forum/pic/item/faedab64034f78f0ce24125e79310a55b3191c6b.jpg",
+            "http://bcs.91.com/rbpiczy/Wallpaper/2015/1/9/d4b1ade76d3549bdbd94937201a32c0d-9.jpg",
+            "http://pic.makepolo.net/news/allimg/20161220/1482205778200337.jpg"]
 
           var i = 0
           function createImg(sourse){
             var img = document.createElement("img")
             img.src = sourse[i++]
+            img.alt = "Kobe Or James"
             if(i === 12){
               i = 0
             }
