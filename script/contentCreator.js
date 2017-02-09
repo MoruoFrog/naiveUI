@@ -8,7 +8,7 @@ function makeCalendar(){
   function handler(event){
     console.log(event.target.innerText)
   }
-
+  
   var placerHolderNode = document.querySelector('.calendar-wrapper')
   naiveUI.createCalendar(placerHolderNode,handler)
 
@@ -158,7 +158,7 @@ function setDrag(){
   makeAPITable(sourse,node)
 }
 
-function resize(){
+function setResize(){
   var nodeToResize = document.querySelector(".resize-node")
 
   naiveUI.resizeable(nodeToResize)

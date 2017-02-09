@@ -23,38 +23,45 @@ var lastClickLi
       jsonsp.type = "text/javascript"
       jsonsp.src = "contentPages/" + id + ".json"
       document.body.appendChild(jsonsp)
-      document.body.removeChild(jsonsp)
 
-      switch (id){
-        case "compo-calendar" :
-          setTimeout(makeCalendar,50)
-          break
-        case "compo-table" :
-          setTimeout(makeTable,50)
-          break
-        case "compo-shuffling" :
-          setTimeout(makeShuffling,50)
-          break
-        case "compo-slideDoor" :
-          setTimeout(makeSildeDoor,50)
-          break
-        case "compo-select" :
-          setTimeout(makeSelect,50)
-          break
-        case "effect-drag" :
-          setTimeout(setDrag,50)
-          break
-        case "effect-resize" :
-          setTimeout(setResize,50)
-          break
-        case "effect-magnifier" :
-          setTimeout(setMagnifier,50)
-          break
-        case "effect-waterfall" :
-          setTimeout(setWaterfall,50)
-          break
+      jsonsp.onload = jsonsp.onreadystatechange = function(){
+        if(!this.readyState || this.readyState === "loaded" || this.readyState === "complete"){
+          document.body.removeChild(jsonsp)
+
+          switch (id){
+            case "compo-calendar" :
+              makeCalendar()
+              break
+            case "compo-table" :
+              makeTable()
+              break
+            case "compo-shuffling" :
+              makeShuffling()
+              break
+            case "compo-slideDoor" :
+              makeSildeDoor()
+              break
+            case "compo-select" :
+              makeSelect()
+              break
+            case "effect-drag" :
+              setDrag()
+              break
+            case "effect-resize" :
+              setResize()
+              break
+            case "effect-magnifier" :
+              setMagnifier()
+              break
+            case "effect-waterfall" :
+              setWaterfall()
+              break
+          }
+
+          jsonsp.onload = null
+        }
       }
-
+      
       document.body.scrollTop = 0
     }
   },false)
