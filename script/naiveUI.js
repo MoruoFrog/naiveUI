@@ -640,6 +640,7 @@ var naiveUI = {
             item.style.width = PICWIDTH + "px"
             item.style.height = PICHEIGHT + "px"
           })
+          break;
         default :
           imgWrapperNode.className += " fade-shuffling"
           break
@@ -694,8 +695,10 @@ var naiveUI = {
           changePic = function(){
             imgs.forEach(function(item,index,array){
               item.style.opacity = "0"
+              item.style.zIndex = 0
             })
             imgs[currentPic].style.opacity = "1"
+            imgs[currentPic].style.zIndex = "1"
           }
           break
       }
@@ -795,6 +798,14 @@ var naiveUI = {
 
         lastBtn.addEventListener("click",changePosition("last"),false)
         nextBtn.addEventListener("click",changePosition("next"),false)
+        //CSS无法选择相邻兄弟的前一个，因此用js实现hover效果
+        nextBtn.addEventListener("mouseover",function(){
+          lastBtn.style.opacity = "1"
+        },false)
+        nextBtn.addEventListener("mouseout",function(){
+          lastBtn.style.opacity = ""
+        },false)
+
         slideBars.forEach(
           function(item,index,array){
             item.addEventListener("click",changePosition(index),false)

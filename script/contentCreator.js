@@ -8,7 +8,7 @@ function makeCalendar(){
   function handler(event){
     console.log(event.target.innerText)
   }
-  
+
   var placerHolderNode = document.querySelector('.calendar-wrapper')
   naiveUI.createCalendar(placerHolderNode,handler)
 
@@ -65,13 +65,13 @@ function makeShuffling(){
       ["http://img2.91.com/uploads/allimg/130424/32-1304241G237.jpg","flower","flowe"]
     ]
 
-  naiveUI.createShuffling(shufflingSourse,shufflingPlacerHolderNode,"sgggg")
+  naiveUI.createShuffling(shufflingSourse,shufflingPlacerHolderNode,"smoothSlip")
 
   var sourse = [
       ["属性名","说明","类型","默认值","是否必须"],
       ["sourse","需要进行轮播展示的图片,格式为:[[src,title,alt],[src,title,alt]]","Array","无","是"],
       ["placerHolderNode","占位元素，在占位元素内生成一个同样大小的轮播组件","HTMLElement","无","是"],
-      ["style","轮播方式，有3种：fade,slip,smooth-slip","String","fade","否"],
+      ["style","轮播方式，有3种：fade,slip,smoothSlip","String","fade","否"],
       ["return","无","无","/","/"]
     ],
     node = document.querySelector("#compo-shuffling")
