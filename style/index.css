@@ -221,3 +221,7 @@ h2.text-center{
 #compo-table .exam-area{
   min-height: 340px;
 }
+
+.API-table{
+  font-family: "Consolas",sans-serif;
+}

@@ -16,7 +16,7 @@ function makeCalendar(){
     ['属性名','说明','类型','默认值','是否必须'],
     ['placerHolderNode','占位元素，在占位元素内生成一个同样大小的日历组件','HTMLElement','无','是'],
     ['handler','点击日期时的事件处理函数','function','无','否'],
-    ['return','无','无','/','/']
+    ['return','无','/','/','/']
     ],
     node = document.getElementById('compo-calendar')
 
@@ -46,7 +46,7 @@ function makeTable(){
       ["属性名","说明","类型","默认值","是否必须"],
       ['sourse','表格数据','Array','无','是'],
       ['className',"css接口,不传入和传入''(空字符串)都表示使用默认样式","String","无","无","否"],
-      ['ifFirstLineFreeze','是否设置首行冻结',"Boolean","false","否"],
+      ['isFirstLineFreeze','是否设置首行冻结',"Boolean","false","否"],
       ['sortRanges','需要设置排序按钮的列,不传入和传入[](空数组)都表示不排序','Array','[ ]','否'],
       ['handler','点击tbody的数据时的时间处理函数','Function','无','否'],
       ['return','返回生成的表格','HTMLElement','/','/']
@@ -72,7 +72,7 @@ function makeShuffling(){
       ["sourse","需要进行轮播展示的图片,格式为:[[src,title,alt],[src,title,alt]]","Array","无","是"],
       ["placerHolderNode","占位元素，在占位元素内生成一个同样大小的轮播组件","HTMLElement","无","是"],
       ["style","轮播方式，有3种：fade,slip,smoothSlip","String","fade","否"],
-      ["return","无","无","/","/"]
+      ["return","无","/","/","/"]
     ],
     node = document.querySelector("#compo-shuffling")
     makeAPITable(sourse,node)
@@ -94,8 +94,8 @@ function makeSildeDoor(){
       ["属性名","说明","类型","默认值","是否必须"],
       ["sourse","需要进行滑动门展示的图片,格式为:[[src,title,alt],[src,title,alt]]","Array","无","是"],
       ["placerHolderNode","占位元素，在占位元素内生成一个同样大小的滑动组件","HTMLElement","无","是"],
-      ["picRatio","图片长宽比","Number","无","是"],
-      ["return","无","无","无"]
+      ["picRatio","图片长宽比,Width/Height","Number","无","是"],
+      ["return","无","/","/",'/']
     ],
     node = document.querySelector("#compo-slideDoor")
     
@@ -131,7 +131,7 @@ function makeSelect(){
       ["optionsValues","option的innerText和data-value的集合，例如：<br>[['篮球',1],['足球',2]]","Array","无","是"],
       ["selectedIndex","默认选中的index","Number","0","否"],
       ["className","select的css接口","String","无","否"],
-      ["return","返回生成的select选择器","HTMLElement","无","/"]
+      ["return","返回生成的select选择器","HTMLElement","/","/"]
     ],
     node = document.getElementById("compo-select")
 
@@ -205,7 +205,8 @@ function setWaterfall(){
     "http://img.pconline.com.cn/images/upload/upc/tx/wallpaper/1205/18/c5/11666275_1337332857422.jpg",
     "http://imgsrc.baidu.com/forum/pic/item/faedab64034f78f0ce24125e79310a55b3191c6b.jpg",
     "http://bcs.91.com/rbpiczy/Wallpaper/2015/1/9/d4b1ade76d3549bdbd94937201a32c0d-9.jpg",
-    "http://pic.makepolo.net/news/allimg/20161220/1482205778200337.jpg"]
+    "http://pic.makepolo.net/news/allimg/20161220/1482205778200337.jpg"
+    ]
 
   var i = 0
   function createImg(sourse){
@@ -239,7 +240,8 @@ function setWaterfall(){
       ['contentCreator','滚动时产生加载内容的函数，例如生成一张图片，返回生成的内容','Function','无','是'],
       ['contentOpeartor','操作生成内容的函数，例如把生成的图片添加到DOM:contentOpeartor(content,targetNode)','Function','无','是'],
       ['targetNode','需要设置滚动加载的元素','HTMLElement','无','是'],
-      ['creatorArguments','contentCreator函数的参数数组','Array','无','否']
+      ['creatorArguments','contentCreator函数的参数数组','Array','无','否'],
+      ['return','无','/','/','/']
     ],
     scrollLoadAPIWrapper = document.querySelector(".scrollLoad-api")
 
