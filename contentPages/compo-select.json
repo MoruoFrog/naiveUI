@@ -1,0 +1,3 @@
+makeContent({
+"content" : "<div id='compo-select' class='content-wrapper'><h1>select选择器</h1><h2>概述</h2><p>select下拉选择，没有分组功能，<br>由于select选择器比较简单，而且通常布局简单,因此没有采用占位元素，而是直接返回生成的select<br>若需要进行布局和样式设置(长度、宽度)，可以通过传递<b>className</b>参数来完成</p><h2>示例</h2><div class='exam-area'></div><div class='code-wrapper'><h2>代码</h2><pre><code>var yearSelect = naiveUI.createSelect(years,indexY,'calendar-select'),<br>&nbsp&nbspmonSelect = naiveUI.createSelect(months,indexM,'calendar-select'),<br>&nbsp&nbspnode = document.querySelector('#compo-select .exam-area')<br><br>node.appendChild(yearSelect)<br>node.appendChild(monSelect)</code></pre></div><h2>API</h2></div>"
+})
