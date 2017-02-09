@@ -27,31 +27,31 @@ var lastClickLi
 
       switch (id){
         case "compo-calendar" :
-          setTimeout(makeCalendar,5)
+          setTimeout(makeCalendar,50)
           break
         case "compo-table" :
-          setTimeout(makeTable,5)
+          setTimeout(makeTable,50)
           break
         case "compo-shuffling" :
-          setTimeout(makeShuffling,5)
+          setTimeout(makeShuffling,50)
           break
         case "compo-slideDoor" :
-          setTimeout(makeSildeDoor,5)
+          setTimeout(makeSildeDoor,50)
           break
         case "compo-select" :
-          setTimeout(makeSelect,5)
+          setTimeout(makeSelect,50)
           break
         case "effect-drag" :
-          setTimeout(setDrag,5)
+          setTimeout(setDrag,50)
           break
         case "effect-resize" :
-          setTimeout(setResize,5)
+          setTimeout(setResize,50)
           break
         case "effect-magnifier" :
-          setTimeout(setMagnifier,5)
+          setTimeout(setMagnifier,50)
           break
         case "effect-waterfall" :
-          setTimeout(setWaterfall,5)
+          setTimeout(setWaterfall,50)
           break
       }
 
