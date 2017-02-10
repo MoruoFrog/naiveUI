@@ -66,6 +66,10 @@ body{
   display: block;
 }
 
+pre + h2{
+  margin-top: 0;
+}
+
 .display-wrapper{
   display: inline-block;
   width: 80%;
