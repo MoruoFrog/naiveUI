@@ -21,7 +21,7 @@ var lastClickLi
       //获取json
       var jsonsp = document.createElement("script")
       jsonsp.type = "text/javascript"
-      jsonsp.src = "contentPages/" + id + ".json"
+      jsonsp.src = "showPage/contentPages/" + id + ".json"
       document.body.appendChild(jsonsp)
 
       jsonsp.onload = jsonsp.onreadystatechange = function(){

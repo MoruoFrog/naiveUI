@@ -1,0 +1,425 @@
+html{
+    font-size: 16px;
+    font-family: "Microsoft Yahei",sans-serif;
+    box-sizing: border-box;
+}
+
+*,*:after,*:before{
+    box-sizing: inherit;
+}
+
+.calendar-operator{
+    position: relative;
+    max-height: 70px;
+    height: 15%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.calendar-operator:after{
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.calendar-last-arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 5%;
+    top: 50%;
+    border: 0.35em solid transparent;
+    border-right:0.7em solid black;
+    transform: translateY(-0.35em);
+    cursor: pointer;
+}
+
+.calendar-next-arrow{
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 5%;
+    top: 50%;
+    border: 0.35em solid transparent;
+    border-left:0.7em solid black;
+    transform: translateY(-0.35em);
+    cursor: pointer;
+}
+
+.calendar-table{
+    width: 100%;
+    height: 85%;
+    color: black;
+}
+
+.calendar-table td{
+    width: 14.285%;
+    border: none;
+}
+
+.calendar-table thead td{
+    border: none;
+    cursor: default;
+}
+
+.calendar-table tbody td{
+    cursor: pointer;
+}
+
+.calendar-table tbody td:hover,.date-chosen{
+    background: #abb3e6;
+    border-radius: 0.5em;
+}
+
+code{
+    display: block;
+    padding: 1em;
+    font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+    background: #e8e5e5;
+    word-break: break-all;
+    white-space: normal;
+}
+
+code span{
+    height: 3em;
+    line-height: 3em;
+}
+.full-center-translate{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.full-center-auto-margin{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+
+.first-tr{
+    background-color: black;
+    color: white;
+}
+
+.freeze-first-tr{
+    position: absolute;
+    opacity: 0;
+    background-color: black;
+    color: white;
+    z-index: 0;
+}
+
+.fade-shuffling{
+    width: 100%;
+    height: 100%;
+}
+
+.fade-shuffling img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+}
+
+.fade-shuffling img:first-of-type{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+    z-index: 99;
+}
+
+.lastMonth,.nextMonth{
+    color: gray;
+}
+
+.magnifier{
+    position: fixed;
+    background: gray;
+    opacity: 0.4;
+    z-index: 9999;
+}
+
+.option{
+    width: 100%;
+    height: 1.5em;
+    border-top: 1px solid black;
+    cursor: pointer;
+}
+
+.option:hover{
+    color: black;
+    background-color: #c4c4d8;
+}
+
+.options{
+    position: absolute;
+    display: none;
+    width: 100%;
+    max-height: 18em;
+    border: 1px solid black;
+    border-top: none;
+    background: white;
+    overflow: scroll;
+    z-index: 9999;
+}
+
+body *::-webkit-scrollbar {
+    width: 0.8em;
+    height: 0;
+}
+
+body *::-webkit-scrollbar-track{
+    border-radius: 0.4em;
+    background: #F5F5F5;
+}
+
+body *::-webkit-scrollbar-thumb{
+    border-radius: 0.4em;
+    background: #555;
+}
+
+.resize-tag-element{
+    position: absolute;
+    opacity: 0;
+    z-index: 999;
+}
+
+.select{
+    display: inline-block;
+    position: relative;
+    width: 4em;
+    max-width: 25em;
+    min-width: 3em;
+    height: 1.5em;
+    border: none;
+    text-align: center;
+}
+
+.calendar-select{
+    display: inline-block;
+    width: 5em;
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.select-down-arrow{
+    position: absolute;
+    top: 50%;
+    right: 0.1em;
+    width: 0;
+    height: 0;
+    border: 0.3em solid transparent;
+    border-top: 0.6em solid black;
+    border-bottom: none;
+    transform: translateY(-0.3em);
+    cursor: pointer;
+}
+
+.select-up-arrow{
+    position: absolute;
+    top: 50%;
+    right: 0.1em;
+    width: 0;
+    height: 0;
+    border: 0.3em solid transparent;
+    border-bottom: 0.6em solid black;
+    border-top: none;
+    transform: translateY(-0.3em);
+    cursor: pointer;
+}
+
+.selected-value{
+    position: relative;
+    width: 100%;
+    height: 1.5em;
+    padding-right: 0.6em;
+    line-height: 1.5em;
+    border: 1px solid black;
+    cursor: default;
+}
+
+.shuffling-img-wrapper{
+    position: absolute;
+    font-size: 0px;
+}
+
+.shuffling-img-wrapper:hover~.shuffling-last-arrow,.shuffling-img-wrapper:hover~.shuffling-next-arrow{
+    opacity: 0.3;
+}
+
+.slip-shuffling{
+    width: 9999999px;
+    left: 0;
+    transition: left 0.5s linear;
+}
+
+.slip-shuffling img{
+    display: inline-block;
+}
+
+.slide-door-img{
+    position: absolute;
+    height: 100%;
+    transition: left 1s linear;
+}
+
+.smooth-slip-shuffling{
+    width: 9999999px;
+    transition: left 0.5s linear;
+}
+
+.smooth-slip-shuffling img{
+    display: inline-block;
+}
+
+.show-magnify{
+    position: fixed;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.show-magnify img{
+    position: absolute;
+    margin: 0;
+}
+
+.shuffling-slidebar{
+    position: absolute;
+    flex-wrap: nowrap;
+    bottom: 0;
+    width: 100%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.shuffling-slidebar img{
+    height: 100%;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+.shuffling-processbar-wrapper{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 8px;
+    background: white;
+    z-index: 999;
+}
+
+.shuffling-processbar{
+    height: 100%;
+    border:1px solid black;
+    background: white;
+    flex: 1 1 auto;
+}
+
+.shuffling-processNode{
+    height: 100%;
+    width: 0;
+    background: black;
+}
+
+.shuffling-last-arrow{
+    position: absolute;
+    top: 50%;
+    left: 1.5%;
+    border: 20px solid white;
+    border-left: 0;
+    border-right: 40px solid black;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    z-index: 999;
+}
+
+.shuffling-next-arrow{
+    position: absolute;
+    top: 50%;
+    right: 1.5%;
+    border: 20px solid white;
+    border-right: 0;
+    border-left: 40px solid black;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    z-index: 999;
+}
+
+.shuffling-next-arrow:hover,.shuffling-last-arrow:hover,.shuffling-next-arrow:hover~.shuffling-last-arrow,.shuffling-last-arrow:hover~.shuffling-next-arrow{
+    opacity: 1;
+}
+
+table{
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    background: white;
+}
+
+table thead td{
+    background: black;
+    color: white;
+}
+
+table td{
+    padding: 0.3em 1em;
+    border: 1px solid black;
+    width: 8em;
+}
+
+.table-sort-up-arrow{
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 0.4em solid transparent;
+    border-top-width: 0;
+    border-bottom:0.8em solid white;
+    cursor: pointer;
+    transform: translateY(-1px);
+  }
+
+.table-sort-down-arrow{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 0.4em solid transparent;
+    border-bottom-width: 0;
+    border-top:0.8em solid white;
+    cursor: pointer;
+    transform: translateY(1px);
+}
+
+.table-wrapper{
+    display: table;
+    position: relative;
+}
+
+.waterfall-flex{
+    display: flex;
+    justify-content: space-around;      
+}
+
+.waterfall-flex > div{
+    width: 30%;
+    height: 0;
+}
+
+.waterfall-flex > div > img{
+    width: 100%;
+}

@@ -40,6 +40,7 @@ body{
   list-style-type: none;
   margin: 0;
   padding-left: 2em;
+  font-family: "Consolas",sans-serif;
 }
 
 .nav ul>li{
@@ -49,10 +50,11 @@ body{
 
 .pointer{
   cursor: pointer;
+  transition: color 0.5s linear;
 }
 
 .pointer:hover,.chosen{
-  color: #6868da;
+  color: #39f;
 }
 
 .content-wrapper{
@@ -76,8 +78,9 @@ body{
   margin-bottom: 0;
 }
 
-.display-wrapper h3,h2,h1{
+.display-wrapper h3,h2,h1,p{
   font-weight: normal;
+  font-family: "Consolas",sans-serif;
 }
 
 .display-wrapper ul{
