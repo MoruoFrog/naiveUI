@@ -73,7 +73,7 @@ var naiveUI = {
         currentY = event.pageY
 
       var leftMove = currentX - initX,
-        topMove =  + currentY - initY
+        topMove = currentY - initY
 
       if(leftMove >= minMoveX && leftMove <= maxMoveX){
         dragNode.style.left = initLeft + leftMove + "px"
@@ -172,8 +172,8 @@ var naiveUI = {
    * @param  {Array}       dragArea  optional [[topleftX,topleftY],[bottomrightX,bottomrightY]] ex:[[200,200],[800,1000]],默认为视口
    * @return {object}      操作接口
    */
-  fixedDragable : function setFixedDrag(dragNode,dragPartdragArea){   
-    "use strict"
+  fixedDragable : function setFixedDrag(dragNode,dragPart,dragArea){   
+    'use strict'
     var mouseOffsetLeft, //鼠标点击点到外边框的距离
       mouseOffsetTop,
       maxLeft,
@@ -181,14 +181,13 @@ var naiveUI = {
       minLeft,
       minRight,
       isDragable = false,
-
-    dragPart = dragPart? dragPart : dragNode
       //设置可拖拽区域
       minLeft = 0,
       maxLeft = document.documentElement.clientWidth - dragNode.offsetWidth,
       minTop = 0,
       maxTop = document.documentElement.clientHeight - dragNode.offsetHeight
 
+    dragPart = dragPart? dragPart : dragNode
     dragNode.style.position = "fixed"
     if(dragArea){
       minLeft = dragArea[0][0]
@@ -199,9 +198,8 @@ var naiveUI = {
 
     function getPosition(event){
       var clientLeft = dragNode.getBoundingClientRect().left,
-        clientTop = dragNode.getBoundingClientRect().top
-
-      var initX = event.clientX,
+        clientTop = dragNode.getBoundingClientRect().top,
+        initX = event.clientX,
         initY = event.clientY
 
       //获取鼠标点击点到外边框的距离
