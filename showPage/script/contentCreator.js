@@ -13,10 +13,10 @@ function makeCalendar(){
   naiveUI.createCalendar(placerHolderNode,handler)
 
   var sourse = [
-    ['属性名','说明','类型','默认值','是否必须'],
-    ['placerHolderNode','占位元素，在占位元素内生成一个同样大小的日历组件','HTMLElement','无','是'],
-    ['handler','点击日期时的事件处理函数','function','无','否'],
-    ['return','无','/','/','/']
+      ['属性名','说明','类型','默认值','是否必须'],
+      ['placerHolderNode','占位元素，在占位元素内生成一个同样大小的日历组件','HTMLElement','无','是'],
+      ['handler','点击日期时的事件处理函数','function','无','否'],
+      ['return','无','/','/','/']
     ],
     node = document.getElementById('compo-calendar')
 

@@ -259,7 +259,7 @@ body *::-webkit-scrollbar-thumb{
 .slip-shuffling{
     width: 9999999px;
     left: 0;
-    transition: left 0.5s linear;
+    transition: left 0.5s ease-in;
 }
 
 .slip-shuffling img{
@@ -274,7 +274,7 @@ body *::-webkit-scrollbar-thumb{
 
 .smooth-slip-shuffling{
     width: 9999999px;
-    transition: left 0.5s linear;
+    transition: left 0.5s ease-in;
 }
 
 .smooth-slip-shuffling img{
