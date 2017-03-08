@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>滑动拼图验证码</title>
+  <link rel="stylesheet" type="text/css" href="t.css">
+  <script type="text/javascript" src="jquery.min.js"></script>
+</head>
+<body>
+  <div class="slide-captcha-wrapper">
+    <input class="hidden" name="captcha-status" value='false'></input>
+    <div class="captcha-slider">
+      <span>拖动滑块，完成拼图</span>
+      <img class="puzzle" src="icons/puzzle_yellow.png">
+      <img class="puzzle missed" src="icons/puzzle_white.png">
+    </div>
+    <div class="captcha-status">
+      <img id="captcha-clock" class="show" src="icons/clock.png">
+      <img id="captcha-fail" class="hidden" src="icons/x.png">
+      <img id="captcha-success" class="hidden" src="icons/tick.png">
+    </div>
+  </div>
+  <script type="text/javascript">
+    ;(function makeSlideCaptcha(){
+      var sliderLen = $('.captcha-slider').outerWidth(),
+        puzzle = $('.puzzle:first'),
+        puzzleMissed = $('.puzzle:last'),
+        matchPosition = Math.floor((7 + Math.random()*2)/10 * sliderLen - puzzle.outerWidth()),
+        initX,
+        initPosition
+
+      function move(e){
+        var moveDis = e.pageX - initX
+        e.preventDefault()
+        if(moveDis > 0 && moveDis < sliderLen){
+          puzzle.css('left',moveDis + initPosition + 'px')
+        }
+      }
+
+      puzzleMissed.css('left',matchPosition + 'px')
+      puzzle.mousedown(function(e){
+        initX = e.pageX       
+        initPosition = parseInt(puzzle.css('left').slice(0,-2))
+
+        $('.captcha-slider>span').animate({opacity :'0'},500)
+        puzzleMissed.show()
+        $(window).mousemove(move)
+        $(window).mouseup(function(e){
+          var currentPosition = parseInt(puzzle.css('left').slice(0,-2))
+
+          if(Math.abs(currentPosition - matchPosition) < 2){
+            $('#captcha-clock').hide()
+            $('#captcha-fail').hide()
+            $('#captcha-success').show()
+            $("input[name='captcha-status']").attr('value','true')
+            puzzle.unbind()
+          }else{
+            $('#captcha-clock').hide()
+            $('#captcha-success').hide()
+            $('#captcha-fail').show()
+            puzzle.animate({left:initPosition + 'px'},1500)
+            setTimeout(function(){
+              $('.captcha-slider>span').animate({opacity :'1'},500)
+            },1500)
+          }
+
+          $(window).unbind('mousemove',move)
+          $(window).unbind(e)
+        })
+      })
+
+    })()
+  </script>
+</body>
+</html>
